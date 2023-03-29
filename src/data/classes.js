@@ -174,7 +174,7 @@ const classes = {
   },
   Bard: {
     name: "Bardo",
-    mainAttribute: "str",
+    mainAttribute: "car",
     hitDice: 10,
     weapons: [
       weapons["Arco largo"],
@@ -275,7 +275,91 @@ const classes = {
       }
     }
   },
-  Knight: "Caballero",
+  knight: {
+    name: "Caballero",
+    mainAttribute: "car",
+    hitDice: 10,
+    weapons: ["all"],
+    armor: ["all"],
+    level: {
+      1: {
+        experiencePoints: 0,
+        attackBonus: 0,
+        hitDice: ["1d10"],
+        abilities: [
+          "Inspirar coraje",
+          "Montura de caballero",
+          "Jinete experto (DES)"
+        ]
+      },
+      2: {
+        experiencePoints: 2251,
+        attackBonus: 1,
+        hitDice: ["1d10"],
+        abilities: []
+      },
+      3: {
+        experiencePoints: 4501,
+        attackBonus: 2,
+        hitDice: ["1d10"],
+        abilities: ["Arrojo"]
+      },
+      4: {
+        experiencePoints: 9001,
+        attackBonus: 3,
+        hitDice: ["1d10"],
+        abilities: []
+      },
+      5: {
+        experiencePoints: 18001,
+        attackBonus: 4,
+        hitDice: ["1d10"],
+        abilities: ["Desmoralizar"]
+      },
+      6: {
+        experiencePoints: 36001,
+        attackBonus: 5,
+        hitDice: ["1d10"],
+        abilities: []
+      },
+      7: {
+        experiencePoints: 72001,
+        attackBonus: 6,
+        hitDice: ["1d10"],
+        abilities: []
+      },
+      8: {
+        experiencePoints: 150001,
+        attackBonus: 7,
+        hitDice: ["1d10"],
+        abilities: ["Dominio del campo de batalla"]
+      },
+      9: {
+        experiencePoints: 300001,
+        attackBonus: 8,
+        hitDice: ["1d10"],
+        abilities: []
+      },
+      10: {
+        experiencePoints: 600001,
+        attackBonus: 9,
+        hitDice: ["1d10"],
+        abilities: ["Llamada a las armas"]
+      },
+      11: {
+        experiencePoints: 725001,
+        attackBonus: 10,
+        hitDice: ["+4 PG"],
+        abilities: []
+      },
+      12: {
+        experiencePoints: 900001,
+        attackBonus: 11,
+        hitDice: ["+4 PG"],
+        abilities: []
+      }
+    }
+  },
   Cleric: "Clérigo",
   Druid: "Druida",
   Explorer: "Explorador",
