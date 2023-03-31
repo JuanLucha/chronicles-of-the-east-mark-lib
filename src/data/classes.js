@@ -190,7 +190,8 @@ const classes = {
       weapons["Hacha de mano"],
       weapons["Jabalina"],
       weapons["Lanza"],
-      weapons["Martillos"]
+      weapons["Martillo de guerra"],
+      weapons["Martillo ligero"]
     ],
     armor: [
       armors["Armadura de cuero"],
@@ -360,8 +361,203 @@ const classes = {
       }
     }
   },
-  Cleric: "Clérigo",
-  Druid: "Druida",
+  Cleric: {
+    name: "Clérigo",
+    mainAttribute: "sab",
+    hitDice: 8,
+    weapons: [
+      weapons["Bastón"],
+      weapons["Cachiporra"],
+      weapons["Garrote"],
+      weapons["Honda"],
+      weapons["Lucero del alba"],
+      weapons["Martillo de guerra"],
+      weapons["Martillo ligero"],
+      weapons["Maza"]
+    ],
+    armor: ["all"],
+    level: {
+      1: {
+        experiencePoints: 0,
+        attackBonus: 0,
+        hitDice: ["1d8"],
+        abilities: ["Conjuros divinos", "Expulsar muertos vivientes"]
+      },
+      2: {
+        experiencePoints: 2251,
+        attackBonus: 1,
+        hitDice: ["1d8"],
+        abilities: []
+      },
+      3: {
+        experiencePoints: 5001,
+        attackBonus: 1,
+        hitDice: ["1d8"],
+        abilities: []
+      },
+      4: {
+        experiencePoints: 9001,
+        attackBonus: 2,
+        hitDice: ["1d8"],
+        abilities: []
+      },
+      5: {
+        experiencePoints: 18001,
+        attackBonus: 2,
+        hitDice: ["1d8"],
+        abilities: []
+      },
+      6: {
+        experiencePoints: 35000,
+        attackBonus: 3,
+        hitDice: ["1d8"],
+        abilities: []
+      },
+      7: {
+        experiencePoints: 70001,
+        attackBonus: 3,
+        hitDice: ["1d8"],
+        abilities: []
+      },
+      8: {
+        experiencePoints: 140001,
+        attackBonus: 4,
+        hitDice: ["1d8"],
+        abilities: []
+      },
+      9: {
+        experiencePoints: 300001,
+        attackBonus: 4,
+        hitDice: ["1d8"],
+        abilities: []
+      },
+      10: {
+        experiencePoints: 425001,
+        attackBonus: 5,
+        hitDice: ["1d8"],
+        abilities: []
+      },
+      11: {
+        experiencePoints: 640001,
+        attackBonus: 5,
+        hitDice: ["+3 PG"],
+        abilities: []
+      },
+      12: {
+        experiencePoints: 900001,
+        attackBonus: 6,
+        hitDice: ["+3 PG"],
+        abilities: []
+      }
+    }
+  },
+  Druid: {
+    name: "Druida",
+    mainAttribute: "sab",
+    hitDice: 8,
+    weapons: [
+      weapons["Arco largo"],
+      weapons["Arco corto"],
+      weapons["Bastón"],
+      weapons["Cimitarra"],
+      weapons["Daga"],
+      weapons["Espada corta"],
+      weapons["Espada larga"],
+      weapons["Garrote"],
+      weapons["Guadaña"],
+      weapons["Hacha de mano"],
+      weapons["Honda"],
+      weapons["Hoz"],
+      weapons["Martillo de guerra"],
+      weapons["Martillo ligero"],
+      weapons["Maza"],
+      weapons["Lanza"]
+    ],
+    // armor incluye todas las armaduras de cuero
+    armor: [
+      armors["Armadura de cuero acolchado"],
+      armors["Armadura de cuero endurecido"],
+      armors["Armadura de cuero tachonada"]
+    ],
+    level: {
+      1: {
+        experiencePoints: 0,
+        attackBonus: 0,
+        hitDice: ["1d8"],
+        abilities: [
+          "Conjuros divinos",
+          "Conocimiento de la naturaleza (SAB)",
+          "Lenguaje druídico"
+        ]
+      },
+      2: {
+        experiencePoints: 2251,
+        attackBonus: 1,
+        hitDice: ["1d8"],
+        abilities: ["Resistencia a los elementos"]
+      },
+      3: {
+        experiencePoints: 5001,
+        attackBonus: 1,
+        hitDice: ["1d8"],
+        abilities: ["Zancada de la foresta"]
+      },
+      4: {
+        experiencePoints: 9001,
+        attackBonus: 2,
+        hitDice: ["1d8"],
+        abilities: []
+      },
+      5: {
+        experiencePoints: 18001,
+        attackBonus: 2,
+        hitDice: ["1d8"],
+        abilities: []
+      },
+      6: {
+        experiencePoints: 35000,
+        attackBonus: 3,
+        hitDice: ["1d8"],
+        abilities: ["Forma salvaje"]
+      },
+      7: {
+        experiencePoints: 70001,
+        attackBonus: 3,
+        hitDice: ["1d8"],
+        abilities: []
+      },
+      8: {
+        experiencePoints: 140001,
+        attackBonus: 4,
+        hitDice: ["1d8"],
+        abilities: []
+      },
+      9: {
+        experiencePoints: 300001,
+        attackBonus: 4,
+        hitDice: ["1d8"],
+        abilities: []
+      },
+      10: {
+        experiencePoints: 425001,
+        attackBonus: 5,
+        hitDice: ["1d8"],
+        abilities: []
+      },
+      11: {
+        experiencePoints: 640001,
+        attackBonus: 5,
+        hitDice: ["+3 PG"],
+        abilities: []
+      },
+      12: {
+        experiencePoints: 900001,
+        attackBonus: 6,
+        hitDice: ["+3 PG"],
+        abilities: []
+      }
+    }
+  },
   Explorer: "Explorador",
   Warrior: "Guerrero",
   Illusionist: "Ilusionista",
