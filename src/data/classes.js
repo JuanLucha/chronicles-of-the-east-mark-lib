@@ -558,7 +558,190 @@ const classes = {
       }
     }
   },
-  Explorer: "Explorador",
+  Explorer: {
+    name: "Explorador",
+    mainAttribute: "fue",
+    hitDice: 10,
+    weapons: ["all"],
+    armor: [
+      armors["Armadura de cuero acolchado"],
+      armors["Armadura de cuero endurecido"],
+      armors["Armadura de cuero tachonada"],
+      armors["Armadura de anillas"],
+      armors["Armadura de varillas"],
+      armors["Cota de escamas"],
+      armors["Cota de malla"],
+      armors["Peto de coraza"]
+    ],
+    level: {
+      1: {
+        experiencePoints: 0,
+        attackBonus: 0,
+        hitDice: ["1d10"],
+        abilities: [
+          "Camuflaje (DES)",
+          "Escalar (DES)",
+          "Maestría en combate",
+          "Moverse en silencio (DES)"
+          "Neutralizar venenos (SAB)",
+          "Rastrear (SAB)",
+          "Supervivencia (SAB)",
+          "Trampero (SAB)",
+        ]
+      },
+      2: {
+        experiencePoints: 2251,
+        attackBonus: 1,
+        hitDice: ["1d10"],
+        abilities: []
+      },
+      3: {
+        experiencePoints: 4501,
+        attackBonus: 2,
+        hitDice: ["1d10"],
+        abilities: []
+      },
+      4: {
+        experiencePoints: 9001,
+        attackBonus: 3,
+        hitDice: ["1d10"],
+        abilities: []
+      },
+      5: {
+        experiencePoints: 18001,
+        attackBonus: 4,
+        hitDice: ["1d10"],
+        abilities: []
+      },
+      6: {
+        experiencePoints: 40001,
+        attackBonus: 5,
+        hitDice: ["1d10"],
+        abilities: ["Enemigo usual"]
+      },
+      7: {
+        experiencePoints: 75001,
+        attackBonus: 6,
+        hitDice: ["1d10"],
+        abilities: []
+      },
+      8: {
+        experiencePoints: 150001,
+        attackBonus: 7,
+        hitDice: ["1d10"],
+        abilities: []
+      },
+      9: {
+        experiencePoints: 250001,
+        attackBonus: 8,
+        hitDice: ["1d10"],
+        abilities: []
+      },
+      10: {
+        experiencePoints: 500001,
+        attackBonus: 9,
+        hitDice: ["1d10"],
+        abilities: []
+      },
+      11: {
+        experiencePoints: 725001,
+        attackBonus: 10,
+        hitDice: ["+4 PG"],
+        abilities: []
+      },
+      12: {
+        experiencePoints: 950001,
+        attackBonus: 11,
+        hitDice: ["+4 PG"],
+        abilities: []
+      }
+    }
+  },
+  Fighter: {
+    name: "Guerrero",
+    mainAttribute: "fue",
+    hitDice: 10,
+    weapons: ["all"],
+    armor: ["all"],
+    level: {
+      1: {
+        experiencePoints: 0,
+        attackBonus: 1,
+        hitDice: ["1d10"],
+        abilities: [
+          "Especialización en armas"
+        ]
+      },
+      2: {
+        experiencePoints: 2001,
+        attackBonus: 2,
+        hitDice: ["1d10"],
+        abilities: []
+      },
+      3: {
+        experiencePoints: 4001,
+        attackBonus: 3,
+        hitDice: ["1d10"],
+        abilities: []
+      },
+      4: {
+        experiencePoints: 8501,
+        attackBonus: 4,
+        hitDice: ["1d10"],
+        abilities: [
+          "Maestría en combate",
+        ]
+      },
+      5: {
+        experiencePoints: 17001,
+        attackBonus: 5,
+        hitDice: ["1d10"],
+        abilities: []
+      },
+      6: {
+        experiencePoints: 34001,
+        attackBonus: 6,
+        hitDice: ["1d10"],
+        abilities: ["Enemigo usual"]
+      },
+      7: {
+        experiencePoints: 68001,
+        attackBonus: 7,
+        hitDice: ["1d10"],
+        abilities: []
+      },
+      8: {
+        experiencePoints: 136001,
+        attackBonus: 8,
+        hitDice: ["1d10"],
+        abilities: []
+      },
+      9: {
+        experiencePoints: 272001,
+        attackBonus: 9,
+        hitDice: ["1d10"],
+        abilities: []
+      },
+      10: {
+        experiencePoints: 500001,
+        attackBonus: 10,
+        hitDice: ["1d10"],
+        abilities: ["Ataque extra"]
+      },
+      11: {
+        experiencePoints: 750001,
+        attackBonus: 11,
+        hitDice: ["+4 PG"],
+        abilities: []
+      },
+      12: {
+        experiencePoints: 1000001,
+        attackBonus: 12,
+        hitDice: ["+4 PG"],
+        abilities: []
+      }
+    }
+  },
   Warrior: "Guerrero",
   Illusionist: "Ilusionista",
   Thief: "Ladrón",
