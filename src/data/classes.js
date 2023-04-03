@@ -742,9 +742,188 @@ const classes = {
       }
     }
   },
-  Warrior: "Guerrero",
-  Illusionist: "Ilusionista",
-  Thief: "Ladrón",
+  Illusionist: {
+    name: "Ilusionista",
+    mainAttribute: "int",
+    hitDice: 4,
+    weapons: [
+      weapons["Bastón"],
+      weapons["Daga"],
+      weapons["Dardo"],
+      weapons["Garrote"]
+    ],
+    armor: [],
+    level: {
+      1: {
+        experiencePoints: 0,
+        attackBonus: 0,
+        hitDice: ["1d4"],
+        abilities: ["Conjuros arcanos", "Sentidos aguzados", "Disfraz (CAR)"]
+      },
+      2: {
+        experiencePoints: 2601,
+        attackBonus: 1,
+        hitDice: ["1d4"],
+        abilities: []
+      },
+      3: {
+        experiencePoints: 5201,
+        attackBonus: 1,
+        hitDice: ["1d4"],
+        abilities: []
+      },
+      4: {
+        experiencePoints: 10401,
+        attackBonus: 1,
+        hitDice: ["1d4"],
+        abilities: []
+      },
+      5: {
+        experiencePoints: 20801,
+        attackBonus: 1,
+        hitDice: ["1d4"],
+        abilities: []
+      },
+      6: {
+        experiencePoints: 42501,
+        attackBonus: 2,
+        hitDice: ["1d4"],
+        abilities: []
+      },
+      7: {
+        experiencePoints: 85001,
+        attackBonus: 2,
+        hitDice: ["1d4"],
+        abilities: []
+      },
+      8: {
+        experiencePoints: 170001,
+        attackBonus: 2,
+        hitDice: ["1d4"],
+        abilities: []
+      },
+      9: {
+        experiencePoints: 340001,
+        attackBonus: 2,
+        hitDice: ["1d4"],
+        abilities: []
+      },
+      10: {
+        experiencePoints: 500001,
+        attackBonus: 3,
+        hitDice: ["1d4"],
+        abilities: []
+      },
+      11: {
+        experiencePoints: 750001,
+        attackBonus: 3,
+        hitDice: ["+1 PG"],
+        abilities: []
+      },
+      12: {
+        experiencePoints: 900001,
+        attackBonus: 3,
+        hitDice: ["+1 PG"],
+        abilities: []
+      }
+    }
+  },
+  Thief: {
+    name: "Ladrón",
+    mainAttribute: "des",
+    hitDice: 6,
+    weapons: ["all"],
+    armor: [
+      armor["Armadura de cuero"],
+      armor["Armadura de cuero acolchado"],
+      armor["Armadura de cuero endurecido"],
+    ],
+    level: {
+      1: {
+        experiencePoints: 0,
+        attackBonus: 0,
+        hitDice: ["1d6"],
+        abilities: [
+          "Abrir cerraduras (DES)",
+          "Ataque por la espalda",
+          "Descifrar escritura (INT)",
+          "Escalar muros (DES)",
+          "Esconderse (DES)",
+          "Escuchar (SAB)",
+          "Germanía",
+          "Montar y desmontar trampas (INT)",
+          "Moverse en silencio (DES)",
+          "Hurtar (DES)",
+        ]
+      },
+      2: {
+        experiencePoints: 1251,
+        attackBonus: 1,
+        hitDice: ["1d6"],
+        abilities: []
+      },
+      3: {
+        experiencePoints: 2501,
+        attackBonus: 1,
+        hitDice: ["1d6"],
+        abilities: []
+      },
+      4: {
+        experiencePoints: 6001,
+        attackBonus: 1,
+        hitDice: ["1d6"],
+        abilities: ["Ataque furtivo"]
+      },
+      5: {
+        experiencePoints: 12001,
+        attackBonus: 2,
+        hitDice: ["1d6"],
+        abilities: []
+      },
+      6: {
+        experiencePoints: 24001,
+        attackBonus: 2,
+        hitDice: ["1d6"],
+        abilities: []
+      },
+      7: {
+        experiencePoints: 48001,
+        attackBonus: 2,
+        hitDice: ["1d6"],
+        abilities: []
+      },
+      8: {
+        experiencePoints: 80001,
+        attackBonus: 3,
+        hitDice: ["1d6"],
+        abilities: []
+      },
+      9: {
+        experiencePoints: 120001,
+        attackBonus: 3,
+        hitDice: ["1d6"],
+        abilities: []
+      },
+      10: {
+        experiencePoints: 175001,
+        attackBonus: 3,
+        hitDice: ["1d6"],
+        abilities: []
+      },
+      11: {
+        experiencePoints: 325001,
+        attackBonus: 4,
+        hitDice: ["+2 PG"],
+        abilities: []
+      },
+      12: {
+        experiencePoints: 450001,
+        attackBonus: 4,
+        hitDice: ["+2 PG"],
+        abilities: []
+      }
+    }
+  },
   Wizard: "Mago",
   Mystic: "Místico",
   Paladin: "Paladín"
