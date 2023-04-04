@@ -924,9 +924,291 @@ const classes = {
       }
     }
   },
-  Wizard: "Mago",
-  Mystic: "Místico",
-  Paladin: "Paladín"
+  Wizard: {
+    name: "Mago",
+    mainAttribute: "int",
+    hitDice: 4,
+    weapons: [
+      weapons["Bastón"],
+      weapons["Daga"],
+      weapons["Dardo"],
+      weapons["Garrote"],
+    ],
+    armor: [],
+    level: {
+      1: {
+        experiencePoints: 0,
+        attackBonus: 0,
+        hitDice: ["1d4"],
+        abilities: [
+          "Conjuros arcanos"
+        ]
+      },
+      2: {
+        experiencePoints: 2601,
+        attackBonus: 1,
+        hitDice: ["1d4"],
+        abilities: []
+      },
+      3: {
+        experiencePoints: 5201,
+        attackBonus: 1,
+        hitDice: ["1d4"],
+        abilities: []
+      },
+      4: {
+        experiencePoints: 10401,
+        attackBonus: 1,
+        hitDice: ["1d4"],
+        abilities: []
+      },
+      5: {
+        experiencePoints: 20801,
+        attackBonus: 1,
+        hitDice: ["1d4"],
+        abilities: []
+      },
+      6: {
+        experiencePoints: 42501,
+        attackBonus: 2,
+        hitDice: ["1d4"],
+        abilities: []
+      },
+      7: {
+        experiencePoints: 85001,
+        attackBonus: 2,
+        hitDice: ["1d4"],
+        abilities: []
+      },
+      8: {
+        experiencePoints: 170001,
+        attackBonus: 2,
+        hitDice: ["1d4"],
+        abilities: []
+      },
+      9: {
+        experiencePoints: 340001,
+        attackBonus: 2,
+        hitDice: ["1d4"],
+        abilities: []
+      },
+      10: {
+        experiencePoints: 500001,
+        attackBonus: 3,
+        hitDice: ["1d4"],
+        abilities: []
+      },
+      11: {
+        experiencePoints: 750001,
+        attackBonus: 3,
+        hitDice: ["+1 PG"],
+        abilities: []
+      },
+      12: {
+        experiencePoints: 1000001,
+        attackBonus: 3,
+        hitDice: ["+1 PG"],
+        abilities: []
+      }
+    }
+  },
+  Mystic: {
+    name: "Místico",
+    mainAttribute: "con",
+    hitDice: 12,
+    weapons: [
+      weapons["Alabarda"]
+      weapons["Bastón"]
+      weapons["Cachiporra"]
+      weapons["Cerbatana"]
+      weapons["Cimitarra"]
+      weapons["Daga"]
+      weapons["Daga de plata"]
+      weapons["Dardo"]
+      weapons["Espada corta"]
+      weapons["Espada larga"]
+      weapons["Estoque"]
+      weapons["Garrote"]
+      weapons["Guadaña"]
+      weapons["Gran hacha"]
+      weapons["Hacha de mano"]
+      weapons["Honda"]
+      weapons["Hoz"]
+      weapons["Jabalina"]
+      weapons["Lanza"]
+      weapons["Látigo"]
+      weapons["Lucero del alba"]
+      weapons["Martillo ligero"]
+      weapons["Maza"]
+    ],
+    armor: [],
+    level: {
+      1: {
+        experiencePoints: 0,
+        attackBonus: 0,
+        hitDice: ["1d12"],
+        abilities: [
+          "Artes marciales",
+          "Ataque aturdidor",
+          "Movimiento rápido",
+          "Resistencia superior"
+        ]
+      },
+      2: {
+        experiencePoints: 1751,
+        attackBonus: 1,
+        hitDice: ["1d12"],
+        abilities: ["Esquivar proyectiles (DES)"]
+      },
+      3: {
+        experiencePoints: 4001,
+        attackBonus: 2,
+        hitDice: ["1d12"],
+        abilities: ["Puño de hierro"]
+      },
+      4: {
+        experiencePoints: 8501,
+        attackBonus: 3,
+        hitDice: ["1d12"],
+        abilities: ["Caída ralentizada"]
+      },
+      5: {
+        experiencePoints: 20001,
+        attackBonus: 4,
+        hitDice: ["1d12"],
+        abilities: []
+      },
+      6: {
+        experiencePoints: 40001,
+        attackBonus: 5,
+        hitDice: ["1d12"],
+        abilities: ["Enlentecimiento vital"]
+      },
+      7: {
+        experiencePoints: 80001,
+        attackBonus: 6,
+        hitDice: ["1d12"],
+        abilities: ["Curación rápida"]
+      },
+      8: {
+        experiencePoints: 160001,
+        attackBonus: 7,
+        hitDice: ["1d12"],
+        abilities: []
+      },
+      9: {
+        experiencePoints: 325001,
+        attackBonus: 8,
+        hitDice: ["1d12"],
+        abilities: ["Mente preclara"]
+      },
+      10: {
+        experiencePoints: 550001,
+        attackBonus: 9,
+        hitDice: ["1d12"],
+        abilities: ["Impacto letal"]
+      },
+      11: {
+        experiencePoints: 750001,
+        attackBonus: 10,
+        hitDice: ["+5 PG"],
+        abilities: []
+      },
+      12: {
+        experiencePoints: 1250001,
+        attackBonus: 11,
+        hitDice: ["+5 PG"],
+        abilities: []
+      }
+    }
+  },
+  Paladin: {
+    name: "Paladín",
+    mainAttribute: "car",
+    hitDice: 10,
+    weapons: ["all"],
+    armor: ["all"],
+    level: {
+      1: {
+        experiencePoints: 0,
+        attackBonus: 0,
+        hitDice: ["1d10"],
+        abilities: [
+          "Aura divina",
+          "Curar enfermedad",
+          "Detectar el mal",
+          "Resistencia divina",
+          "Sanar con las manos"
+        ]
+      },
+      2: {
+        experiencePoints: 2701,
+        attackBonus: 1,
+        hitDice: ["1d10"],
+        abilities: []
+      },
+      3: {
+        experiencePoints: 5501,
+        attackBonus: 2,
+        hitDice: ["1d10"],
+        abilities: ["Expulsar muertos vivientes"]
+      },
+      4: {
+        experiencePoints: 12001,
+        attackBonus: 3,
+        hitDice: ["1d10"],
+        abilities: ["Montura divina"]
+      },
+      5: {
+        experiencePoints: 24001,
+        attackBonus: 4,
+        hitDice: ["1d10"],
+        abilities: []
+      },
+      6: {
+        experiencePoints: 48001,
+        attackBonus: 5,
+        hitDice: ["1d10"],
+        abilities: ["Aura de coraje"]
+      },
+      7: {
+        experiencePoints: 95001,
+        attackBonus: 6,
+        hitDice: ["1d10"],
+        abilities: []
+      },
+      8: {
+        experiencePoints: 180001,
+        attackBonus: 7,
+        hitDice: ["1d10"],
+        abilities: []
+      },
+      9: {
+        experiencePoints: 360001,
+        attackBonus: 8,
+        hitDice: ["1d10"],
+        abilities: ["Castigar el mal"]
+      },
+      10: {
+        experiencePoints: 700001,
+        attackBonus: 9,
+        hitDice: ["1d10"],
+        abilities: []
+      },
+      11: {
+        experiencePoints: 1000001,
+        attackBonus: 10,
+        hitDice: ["+4 PG"],
+        abilities: []
+      },
+      12: {
+        experiencePoints: 1300001,
+        attackBonus: 11,
+        hitDice: ["+4 PG"],
+        abilities: ["Curación divina"]
+      }
+    }
+  },
 };
 
 export { classes };
