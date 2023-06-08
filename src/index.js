@@ -1,10 +1,3 @@
-function createChronicles() {
-	return {
-		generateCharacter: function() {
-			// This generates a d&d character
-			kk
-		},
-	}
-}
+import generateCharacter from "./generators/character-generator";
 
-export default createChronicles;
+generateCharacter("Pepe", "Human", "Fighter", 10);

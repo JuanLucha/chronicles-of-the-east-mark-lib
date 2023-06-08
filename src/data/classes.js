@@ -1,4 +1,5 @@
 import { armors } from "./armors";
+import { weapons } from "./weapons";
 
 const classes = {
   Assassin: {
@@ -582,11 +583,11 @@ const classes = {
           "Camuflaje (DES)",
           "Escalar (DES)",
           "Maestría en combate",
-          "Moverse en silencio (DES)"
+          "Moverse en silencio (DES)",
           "Neutralizar venenos (SAB)",
           "Rastrear (SAB)",
           "Supervivencia (SAB)",
-          "Trampero (SAB)",
+          "Trampero (SAB)"
         ]
       },
       2: {
@@ -668,9 +669,7 @@ const classes = {
         experiencePoints: 0,
         attackBonus: 1,
         hitDice: ["1d10"],
-        abilities: [
-          "Especialización en armas"
-        ]
+        abilities: ["Especialización en armas"]
       },
       2: {
         experiencePoints: 2001,
@@ -688,9 +687,7 @@ const classes = {
         experiencePoints: 8501,
         attackBonus: 4,
         hitDice: ["1d10"],
-        abilities: [
-          "Maestría en combate",
-        ]
+        abilities: ["Maestría en combate"]
       },
       5: {
         experiencePoints: 17001,
@@ -834,9 +831,9 @@ const classes = {
     hitDice: 6,
     weapons: ["all"],
     armor: [
-      armor["Armadura de cuero"],
-      armor["Armadura de cuero acolchado"],
-      armor["Armadura de cuero endurecido"],
+      armors["Armadura de cuero"],
+      armors["Armadura de cuero acolchado"],
+      armors["Armadura de cuero endurecido"]
     ],
     level: {
       1: {
@@ -853,7 +850,7 @@ const classes = {
           "Germanía",
           "Montar y desmontar trampas (INT)",
           "Moverse en silencio (DES)",
-          "Hurtar (DES)",
+          "Hurtar (DES)"
         ]
       },
       2: {
@@ -932,7 +929,7 @@ const classes = {
       weapons["Bastón"],
       weapons["Daga"],
       weapons["Dardo"],
-      weapons["Garrote"],
+      weapons["Garrote"]
     ],
     armor: [],
     level: {
@@ -940,9 +937,7 @@ const classes = {
         experiencePoints: 0,
         attackBonus: 0,
         hitDice: ["1d4"],
-        abilities: [
-          "Conjuros arcanos"
-        ]
+        abilities: ["Conjuros arcanos"]
       },
       2: {
         experiencePoints: 2601,
@@ -1017,28 +1012,28 @@ const classes = {
     mainAttribute: "con",
     hitDice: 12,
     weapons: [
-      weapons["Alabarda"]
-      weapons["Bastón"]
-      weapons["Cachiporra"]
-      weapons["Cerbatana"]
-      weapons["Cimitarra"]
-      weapons["Daga"]
-      weapons["Daga de plata"]
-      weapons["Dardo"]
-      weapons["Espada corta"]
-      weapons["Espada larga"]
-      weapons["Estoque"]
-      weapons["Garrote"]
-      weapons["Guadaña"]
-      weapons["Gran hacha"]
-      weapons["Hacha de mano"]
-      weapons["Honda"]
-      weapons["Hoz"]
-      weapons["Jabalina"]
-      weapons["Lanza"]
-      weapons["Látigo"]
-      weapons["Lucero del alba"]
-      weapons["Martillo ligero"]
+      weapons["Alabarda"],
+      weapons["Bastón"],
+      weapons["Cachiporra"],
+      weapons["Cerbatana"],
+      weapons["Cimitarra"],
+      weapons["Daga"],
+      weapons["Daga de plata"],
+      weapons["Dardo"],
+      weapons["Espada corta"],
+      weapons["Espada larga"],
+      weapons["Estoque"],
+      weapons["Garrote"],
+      weapons["Guadaña"],
+      weapons["Gran hacha"],
+      weapons["Hacha de mano"],
+      weapons["Honda"],
+      weapons["Hoz"],
+      weapons["Jabalina"],
+      weapons["Lanza"],
+      weapons["Látigo"],
+      weapons["Lucero del alba"],
+      weapons["Martillo ligero"],
       weapons["Maza"]
     ],
     armor: [],
@@ -1208,7 +1203,7 @@ const classes = {
         abilities: ["Curación divina"]
       }
     }
-  },
+  }
 };
 
 export { classes };

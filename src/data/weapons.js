@@ -1,5 +1,5 @@
-const weapons = {
-  "Alabarda": {
+export const weapons = {
+  Alabarda: {
     name: "Alabarda",
     cost: 8,
     damage: "1d10",
@@ -71,7 +71,7 @@ const weapons = {
     VE: 5,
     range: "30 metros"
   },
-  "Bastón": {
+  Bastón: {
     name: "Bastón",
     cost: 4,
     damage: "1d8",
@@ -79,7 +79,7 @@ const weapons = {
     VE: 4,
     range: "-"
   },
-  "Cachiporra": {
+  Cachiporra: {
     name: "Cachiporra",
     cost: 2,
     damage: "1d6",
@@ -87,7 +87,7 @@ const weapons = {
     VE: 2,
     range: "-"
   },
-  "Cerbatana": {
+  Cerbatana: {
     name: "Cerbatana",
     cost: 4,
     damage: "1d4",
@@ -95,7 +95,7 @@ const weapons = {
     VE: 1,
     range: "15 metros"
   },
-  "Cimitarra": {
+  Cimitarra: {
     name: "Cimitarra",
     cost: 15,
     damage: "1d6",
@@ -103,7 +103,7 @@ const weapons = {
     VE: 3,
     range: "-"
   },
-  "Daga": {
+  Daga: {
     name: "Daga",
     cost: 3,
     damage: "1d4",
@@ -119,7 +119,7 @@ const weapons = {
     VE: 1,
     range: "6 metros"
   },
-  "Dardo": {
+  Dardo: {
     name: "Dardo",
     cost: 5,
     damage: "1d3",
@@ -159,7 +159,7 @@ const weapons = {
     VE: 5,
     range: "-"
   },
-  "Estoque": {
+  Estoque: {
     name: "Estoque",
     cost: 15,
     damage: "1d6",
@@ -167,7 +167,7 @@ const weapons = {
     VE: 3,
     range: "-"
   },
-  "Garrote": {
+  Garrote: {
     name: "Garrote",
     cost: 3,
     damage: "1d4",
@@ -175,7 +175,7 @@ const weapons = {
     VE: 2,
     range: "-"
   },
-  "Guadaña": {
+  Guadaña: {
     name: "Guadaña",
     cost: 18,
     damage: "2d4",
@@ -206,8 +206,8 @@ const weapons = {
     weight: 1.5,
     VE: 2,
     range: "6 metros"
-  }
-  "Honda": {
+  },
+  Honda: {
     name: "Honda",
     cost: 2,
     damage: "1d4",
@@ -215,7 +215,7 @@ const weapons = {
     VE: 1,
     range: "15 metros"
   },
-  "Hoz": {
+  Hoz: {
     name: "Hoz",
     cost: 6,
     damage: "1d4",
@@ -223,7 +223,7 @@ const weapons = {
     VE: 3,
     range: "–"
   },
-  "Jabalina": {
+  Jabalina: {
     name: "Jabalina",
     cost: 1,
     damage: "1d4",
@@ -231,7 +231,7 @@ const weapons = {
     VE: 2,
     range: "9 metros"
   },
-  "Lanza": {
+  Lanza: {
     name: "Lanza",
     cost: 4,
     damage: "1d6",
@@ -247,7 +247,7 @@ const weapons = {
     VE: 7,
     range: "–"
   },
-  "Látigo": {
+  Látigo: {
     name: "Látigo",
     cost: 3,
     damage: "1d3",
@@ -279,7 +279,7 @@ const weapons = {
     VE: 2,
     range: "9 metros"
   },
-  "Maza": {
+  Maza: {
     name: "Maza",
     cost: 5,
     damage: "1d6",
@@ -287,7 +287,7 @@ const weapons = {
     VE: 3,
     range: "–"
   },
-  "Pica": {
+  Pica: {
     name: "Pica",
     cost: 8,
     damage: "1d8",
@@ -295,7 +295,7 @@ const weapons = {
     VE: 6,
     range: "–"
   },
-  "Tridente": {
+  Tridente: {
     name: "Tridente",
     cost: 4,
     damage: "1d8",
