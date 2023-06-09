@@ -33,7 +33,7 @@ export default function generateCharacter(
   }
 
   // Fill the traits with the ones in the ancestries array
-  // character.traits = ancestries[ancestry].traits;
+  character.traits = ancestries[ancestry].traits;
 
   // Add the class traits based on level
   // const classTraits = classes[characterClass].level;

@@ -64,35 +64,144 @@ describe("generateCharacter", () => {
 
       expect(character.stats).toEqual(stats);
     });
-
-    // expect(character).toHaveProperty("name", testName);
-    // expect(character).toHaveProperty("ancestry", testAncestry);
-    // expect(character).toHaveProperty("class", testClass);
-    // expect(character).toHaveProperty("level", testLevel);
-    // expect(character).toHaveProperty("attackBonus");
-    // expect(character).toHaveProperty("armorClass");
-    // expect(character).toHaveProperty("hitPoints");
-    // expect(character).toHaveProperty("weapons");
-    // expect(character).toHaveProperty("armor");
-    // expect(character).toHaveProperty("traits");
-    // expect(character).toHaveProperty("stats");
-    // expect(character).toHaveProperty("extra");
   });
 
-  // it("should correctly apply ancestry modifiers to stats", () => {
-  //   const character = generateCharacter(
-  //     testName,
-  //     testAncestry,
-  //     testClass,
-  //     testLevel
-  //   );
-  //   const ancestryModifiers = ancestries[testAncestry].modifiers;
+  it("should generate a character object with the right properties", () => {
+    const level = 1;
+    const characterClass = "warrior";
+    const ancestry = "human";
+    const character = generateCharacter(
+      characterName,
+      ancestry,
+      characterClass,
+      level
+    );
 
-  //   for (let stat in ancestryModifiers) {
-  //     // In this test, we're assuming that the base value for each stat is 0.
-  //     expect(character.stats[stat]).toBe(ancestryModifiers[stat]);
-  //   }
-  // });
+    expect(character).toHaveProperty("name", characterName);
+    expect(character).toHaveProperty("ancestry", ancestry);
+    expect(character).toHaveProperty("class", characterClass);
+    expect(character).toHaveProperty("level", level);
+    expect(character).toHaveProperty("attackBonus");
+    expect(character).toHaveProperty("armorClass");
+    expect(character).toHaveProperty("hitPoints");
+    expect(character).toHaveProperty("weapons");
+    expect(character).toHaveProperty("armor");
+    expect(character).toHaveProperty("traits");
+    expect(character).toHaveProperty("stats");
+    expect(character).toHaveProperty("extra");
+  });
 
-  // Add more tests as necessary...
+  it("should add the correct ancestry traits", () => {
+    const cases = [
+      {
+        ancestry: "elf",
+        traits: {
+          size: "mediano",
+          speed: 10,
+          languages: [
+            "común",
+            "élfico",
+            "enano",
+            "orco",
+            "goblin",
+            "halfling",
+            "dracónico"
+          ],
+          preferredClass: [
+            classes.Bard,
+            classes.Knight,
+            classes.Druid,
+            classes.Explorer,
+            classes.Warrior,
+            classes.Wizard,
+            classes.Thief
+          ]
+        }
+      },
+      {
+        ancestry: "dwarf",
+        traits: {
+          size: "pequeño",
+          speed: 6,
+          languages: [
+            "común",
+            "enano",
+            "gnomo",
+            "orco",
+            "goblin",
+            "halfling",
+            "ogro",
+            "gigante",
+            "trol"
+          ],
+          preferredClass: [
+            classes.Barbarian,
+            classes.Cleric,
+            classes.Bard,
+            classes.Warrior,
+            classes.Thief
+          ]
+        }
+      },
+      {
+        ancestry: "drow",
+        traits: {
+          size: "mediano",
+          speed: 10,
+          languages: [
+            "común",
+            "élfico",
+            "enano",
+            "dracónico",
+            "halfling",
+            "goblin",
+            "orco"
+          ],
+          preferredClass: [
+            classes.Assassin,
+            classes.Cleric,
+            classes.Explorer,
+            classes.Warrior,
+            classes.Wizard,
+            classes.Thief
+          ]
+        }
+      },
+      {
+        ancestry: "halfling",
+        traits: {
+          size: "pequeño",
+          speed: 6,
+          languages: [
+            "común",
+            "halfling",
+            "enano",
+            "élfico",
+            "gnomo",
+            "goblin"
+          ],
+          preferredClass: [
+            classes.Bard,
+            classes.Cleric,
+            classes.Druid,
+            classes.Explorer,
+            classes.Warrior,
+            classes.Thief
+          ]
+        }
+      }
+    ];
+
+    cases.forEach(({ ancestry, traits }) => {
+      const characterClass = "warrior";
+      const level = 1;
+      const character = generateCharacter(
+        characterName,
+        ancestry,
+        characterClass,
+        level
+      );
+      expect(character.traits).toEqual(traits);
+    });
+  });
 });
