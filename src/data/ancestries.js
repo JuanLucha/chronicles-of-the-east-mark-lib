@@ -32,7 +32,7 @@ export const ancestries = {
         classes.Cleric,
         classes.Druid,
         classes.Explorer,
-        classes.Warrior,
+        classes.Fighter,
         classes.Illusionist,
         classes.Thief,
         classes.Wizard,
@@ -69,7 +69,7 @@ export const ancestries = {
         classes.Knight,
         classes.Druid,
         classes.Explorer,
-        classes.Warrior,
+        classes.Fighter,
         classes.Wizard,
         classes.Thief
       ]
@@ -111,7 +111,7 @@ export const ancestries = {
         classes.Assassin,
         classes.Cleric,
         classes.Explorer,
-        classes.Warrior,
+        classes.Fighter,
         classes.Wizard,
         classes.Thief
       ]
@@ -155,7 +155,7 @@ export const ancestries = {
         classes.Barbarian,
         classes.Cleric,
         classes.Bard,
-        classes.Warrior,
+        classes.Fighter,
         classes.Thief
       ]
     },
@@ -236,7 +236,7 @@ export const ancestries = {
         classes.Cleric,
         classes.Druid,
         classes.Explorer,
-        classes.Warrior,
+        classes.Fighter,
         classes.Thief
       ]
     },
@@ -283,7 +283,7 @@ export const ancestries = {
         classes.Cleric,
         classes.Druid,
         classes.Explorer,
-        classes.Warrior,
+        classes.Fighter,
         classes.Illusionist,
         classes.Thief,
         classes.Wizard,
@@ -329,7 +329,7 @@ export const ancestries = {
         classes.Barbarian,
         classes.Cleric,
         classes.Explorer,
-        classes.Warrior,
+        classes.Fighter,
         classes.Thief
       ]
     },

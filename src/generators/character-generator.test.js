@@ -1,11 +1,14 @@
-import generateCharacter from "./character-generator";
-import { generateStats } from "./stats-generator";
+import { generateCharacter } from "./character-generator";
+import { generateStats, getModifier } from "./stats-generator";
 import { ancestries } from "../data/ancestries";
 import { classes } from "../data/classes";
 import { sizes } from "../data/sizes";
 
 jest.mock("./stats-generator", () => {
+  const originalModule = jest.requireActual("./stats-generator");
+
   return {
+    ...originalModule,
     generateStats: jest.fn()
   };
 });
@@ -17,7 +20,7 @@ describe("generateCharacter", () => {
 
   it("should add the ancestry modifiers correctly to the stats", () => {
     const level = 1;
-    const characterClass = "warrior";
+    const characterClass = "Fighter";
     const cases = [
       {
         ancestry: "human",
@@ -68,7 +71,7 @@ describe("generateCharacter", () => {
 
   it("should generate a character object with the right properties", () => {
     const level = 1;
-    const characterClass = "warrior";
+    const characterClass = "Fighter";
     const ancestry = "human";
     const character = generateCharacter(
       characterName,
@@ -112,7 +115,7 @@ describe("generateCharacter", () => {
             classes.Knight,
             classes.Druid,
             classes.Explorer,
-            classes.Warrior,
+            classes.Fighter,
             classes.Wizard,
             classes.Thief
           ]
@@ -138,7 +141,7 @@ describe("generateCharacter", () => {
             classes.Barbarian,
             classes.Cleric,
             classes.Bard,
-            classes.Warrior,
+            classes.Fighter,
             classes.Thief
           ]
         }
@@ -161,7 +164,7 @@ describe("generateCharacter", () => {
             classes.Assassin,
             classes.Cleric,
             classes.Explorer,
-            classes.Warrior,
+            classes.Fighter,
             classes.Wizard,
             classes.Thief
           ]
@@ -185,7 +188,7 @@ describe("generateCharacter", () => {
             classes.Cleric,
             classes.Druid,
             classes.Explorer,
-            classes.Warrior,
+            classes.Fighter,
             classes.Thief
           ]
         }
@@ -193,7 +196,7 @@ describe("generateCharacter", () => {
     ];
 
     cases.forEach(({ ancestry, traits }) => {
-      const characterClass = "warrior";
+      const characterClass = "Fighter";
       const level = 1;
       const character = generateCharacter(
         characterName,
@@ -202,6 +205,38 @@ describe("generateCharacter", () => {
         level
       );
       expect(character.traits).toEqual(traits);
+    });
+  });
+
+  it("should add the correct class stat benefits", () => {
+    const cases = [
+      {
+        class: "Fighter",
+        level: 5,
+        traits: {
+          mainAttribute: "fue",
+          hitDice: 10,
+          extraHitPoints: 4,
+          weapons: "all",
+          armor: "all",
+          experiencePoints: 0,
+          attackBonus: 1,
+          abilities: ["Especialización en armas"]
+        }
+      }
+    ];
+
+    cases.forEach(({ class: characterClass, level, traits }) => {
+      const ancestry = "human";
+      const character = generateCharacter(
+        characterName,
+        ancestry,
+        characterClass,
+        level
+      );
+      expect(character.level).toEqual(level);
+      expect(character.class).toEqual(characterClass);
+      expect(character.attackBonus).toEqual(traits.attackBonus);
     });
   });
 });
