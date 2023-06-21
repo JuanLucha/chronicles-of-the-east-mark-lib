@@ -1,5 +1,7 @@
 import { ancestries } from "../data/ancestries.js";
 import { classes } from "../data/classes.js";
+import generatePrimaryStats from "./generate-primary-stats.js";
+import hpGenerator from "./hp-generator.js";
 import { generateStats, getModifier } from "./stats-generator.js";
 
 const generateCharacter = (name, ancestry, characterClass, level) => {
@@ -13,9 +15,11 @@ const generateCharacter = (name, ancestry, characterClass, level) => {
     hitPoints: 0,
     weapons: [],
     armor: [],
-    traits: [],
+    ancestryTraits: [],
+    classTraits: [],
     stats: [],
-    extra: []
+    extra: [],
+    primaryStats: []
   };
 
   // Generate the stats
@@ -28,26 +32,42 @@ const generateCharacter = (name, ancestry, characterClass, level) => {
   }
 
   // Fill the traits with the ones in the ancestries array
-  character.traits = ancestries[ancestry].traits;
+  character.ancestryTraits = ancestries[ancestry].traits;
+
+  // Fill the traits with the ones in the classes array
+  const { level: _, ...rest } = classes[characterClass];
+  character.classTraits = rest;
 
   // Add the hit points based on the class and level
-  const hitDiceMultiplier = level > 10 ? 10 : level;
-  const extraHitPoints =
-    level > 10 ? (level - 10) * classes[characterClass].extraHitPoints : 0;
-  const classHitPoints = classes[characterClass].hitDice * hitDiceMultiplier;
-  const constitutionHitPoints = getModifier(character.stats.con) * level;
-  character.hitPoints = classHitPoints + extraHitPoints + constitutionHitPoints;
-  if (character.hitPoints < 1) {
-    character.hitPoints = 1;
+  character.hitPoints = hpGenerator(
+    level,
+    classes[characterClass].hitDice,
+    classes[characterClass].extraHitPoints,
+    getModifier(character.stats.con)
+  );
+
+  // Add the attack bonus based on the class and level
+  character.attackBonus = classes[characterClass].level[level].attackBonus;
+
+  // Add the experience points based on the class and level
+  character.experiencePoints =
+    classes[characterClass].level[level].experiencePoints;
+
+  // Add the abilities based on the class and level, adding all the abilities from previous levels together
+  for (let i = 1; i <= level; i++) {
+    character.classTraits.abilities = [
+      ...(character.classTraits.abilities || []),
+      ...(classes[characterClass].level[i].abilities || [])
+    ];
   }
 
-  // Add the class abilities based on level
-  // const classTraits = classes[characterClass].level;
-  // for (const i = 0; i < level; i++) {
-  //   character.traits = [...character.traits, ...classTraits[i].abilities];
-  // }
+  // Select the primary stats based on the class and ancestry
+  character.primaryStats.push(classes[characterClass].mainAttribute);
+  character.primaryStats = generatePrimaryStats(character.primaryStats);
+  if (character.ancestry === "human") {
+    character.primaryStats = generatePrimaryStats(character.primaryStats);
+  }
 
-  // console.log(character.traits.preferredClass.map(c => c.name));
   return character;
 };
 

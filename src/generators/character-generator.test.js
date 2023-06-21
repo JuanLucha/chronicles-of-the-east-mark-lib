@@ -3,6 +3,7 @@ import { generateStats, getModifier } from "./stats-generator";
 import { ancestries } from "../data/ancestries";
 import { classes } from "../data/classes";
 import { sizes } from "../data/sizes";
+import { weapons } from "../data/weapons";
 
 jest.mock("./stats-generator", () => {
   const originalModule = jest.requireActual("./stats-generator");
@@ -89,7 +90,8 @@ describe("generateCharacter", () => {
     expect(character).toHaveProperty("hitPoints");
     expect(character).toHaveProperty("weapons");
     expect(character).toHaveProperty("armor");
-    expect(character).toHaveProperty("traits");
+    expect(character).toHaveProperty("ancestryTraits");
+    expect(character).toHaveProperty("classTraits");
     expect(character).toHaveProperty("stats");
     expect(character).toHaveProperty("extra");
   });
@@ -204,7 +206,7 @@ describe("generateCharacter", () => {
         characterClass,
         level
       );
-      expect(character.traits).toEqual(traits);
+      expect(character.ancestryTraits).toEqual(traits);
     });
   });
 
@@ -212,22 +214,71 @@ describe("generateCharacter", () => {
     const cases = [
       {
         class: "Fighter",
+        ancestry: "human",
         level: 5,
         traits: {
           mainAttribute: "fue",
           hitDice: 10,
           extraHitPoints: 4,
-          weapons: "all",
-          armor: "all",
-          experiencePoints: 0,
-          attackBonus: 1,
-          abilities: ["Especialización en armas"]
+          weapons: ["all"],
+          armor: ["all"],
+          experiencePoints: 17001,
+          attackBonus: 5,
+          abilities: ["Especialización en armas", "Maestría en combate"],
+          numberOfPrimaryStats: 3
+        }
+      },
+      {
+        class: "Wizard",
+        ancestry: "dwarf",
+        level: 10,
+        traits: {
+          mainAttribute: "fue",
+          hitDice: 4,
+          extraHitPoints: 1,
+          weapons: [
+            weapons["Bastón"],
+            weapons["Daga"],
+            weapons["Dardo"],
+            weapons["Garrote"]
+          ],
+          armor: [],
+          experiencePoints: 500001,
+          attackBonus: 3,
+          abilities: ["Conjuros arcanos"],
+          numberOfPrimaryStats: 2
+        }
+      },
+      {
+        class: "Paladin",
+        ancestry: "elf",
+        level: 12,
+        traits: {
+          mainAttribute: "fue",
+          hitDice: 10,
+          extraHitPoints: 4,
+          weapons: ["all"],
+          armor: ["all"],
+          experiencePoints: 1300001,
+          attackBonus: 11,
+          abilities: [
+            "Aura divina",
+            "Curar enfermedad",
+            "Detectar el mal",
+            "Resistencia divina",
+            "Sanar con las manos",
+            "Expulsar muertos vivientes",
+            "Montura divina",
+            "Aura de coraje",
+            "Castigar el mal",
+            "Curación divina"
+          ],
+          numberOfPrimaryStats: 2
         }
       }
     ];
 
-    cases.forEach(({ class: characterClass, level, traits }) => {
-      const ancestry = "human";
+    cases.forEach(({ class: characterClass, level, traits, ancestry }) => {
       const character = generateCharacter(
         characterName,
         ancestry,
@@ -236,7 +287,18 @@ describe("generateCharacter", () => {
       );
       expect(character.level).toEqual(level);
       expect(character.class).toEqual(characterClass);
+      expect(character.classTraits.hitDice).toEqual(traits.hitDice);
+      expect(character.classTraits.extraHitPoints).toEqual(
+        traits.extraHitPoints
+      );
+      expect(character.classTraits.weapons).toEqual(traits.weapons);
+      expect(character.classTraits.armor).toEqual(traits.armor);
+      expect(character.experiencePoints).toEqual(traits.experiencePoints);
       expect(character.attackBonus).toEqual(traits.attackBonus);
+      expect(character.classTraits.abilities).toEqual(traits.abilities);
+      expect(character.primaryStats.length).toEqual(
+        traits.numberOfPrimaryStats
+      );
     });
   });
 });
