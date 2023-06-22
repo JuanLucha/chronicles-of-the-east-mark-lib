@@ -4,6 +4,9 @@
   "description": "",
   "main": "dist/cronicas-de-la-marca-lib.cjs.js",
   "module": "dist/cronicas-de-la-marca-lib.esm.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "jest",
     "watch": "jest --watch",
