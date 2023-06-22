@@ -2,7 +2,8 @@
   "name": "cronicas-de-la-marca-lib",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/cronicas-de-la-marca-lib.cjs.js",
+  "module": "dist/cronicas-de-la-marca-lib.esm.js",
   "scripts": {
     "test": "jest",
     "watch": "jest --watch",

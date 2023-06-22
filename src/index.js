@@ -1,1 +1,3 @@
-import generateCharacter from "./generators/character-generator";
+import { generateCharacter } from "./generators/character-generator";
+
+export { generateCharacter };

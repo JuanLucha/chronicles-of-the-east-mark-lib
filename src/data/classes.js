@@ -2,7 +2,7 @@ import { armors } from "./armors";
 import { weapons } from "./weapons";
 
 const classes = {
-  Assassin: {
+  assassin: {
     name: "Asesino",
     mainAttribute: "dex",
     hitDice: 6,
@@ -76,7 +76,7 @@ const classes = {
       }
     }
   },
-  Barbarian: {
+  barbarian: {
     name: "Bárbaro",
     mainAttribute: "str",
     hitDice: 12,
@@ -151,7 +151,7 @@ const classes = {
       }
     }
   },
-  Bard: {
+  bard: {
     name: "Bardo",
     mainAttribute: "car",
     hitDice: 10,
@@ -244,7 +244,7 @@ const classes = {
       }
     }
   },
-  Knight: {
+  knight: {
     name: "Caballero",
     mainAttribute: "car",
     hitDice: 10,
@@ -318,7 +318,7 @@ const classes = {
       }
     }
   },
-  Cleric: {
+  cleric: {
     name: "Clérigo",
     mainAttribute: "sab",
     hitDice: 8,
@@ -397,7 +397,7 @@ const classes = {
       }
     }
   },
-  Druid: {
+  druid: {
     name: "Druida",
     mainAttribute: "sab",
     hitDice: 8,
@@ -493,7 +493,7 @@ const classes = {
       }
     }
   },
-  Explorer: {
+  explorer: {
     name: "Explorador",
     mainAttribute: "fue",
     hitDice: 10,
@@ -581,7 +581,7 @@ const classes = {
       }
     }
   },
-  Fighter: {
+  fighter: {
     name: "Guerrero",
     mainAttribute: "fue",
     hitDice: 10,
@@ -651,7 +651,7 @@ const classes = {
       }
     }
   },
-  Illusionist: {
+  illusionist: {
     name: "Ilusionista",
     mainAttribute: "int",
     hitDice: 4,
@@ -726,7 +726,7 @@ const classes = {
       }
     }
   },
-  Thief: {
+  thief: {
     name: "Ladrón",
     mainAttribute: "des",
     hitDice: 6,
@@ -811,7 +811,7 @@ const classes = {
       }
     }
   },
-  Wizard: {
+  wizard: {
     name: "Mago",
     mainAttribute: "int",
     hitDice: 4,
@@ -886,7 +886,7 @@ const classes = {
       }
     }
   },
-  Mystic: {
+  mystic: {
     name: "Místico",
     mainAttribute: "con",
     hitDice: 12,
@@ -985,7 +985,7 @@ const classes = {
       }
     }
   },
-  Paladin: {
+  paladin: {
     name: "Paladín",
     mainAttribute: "car",
     hitDice: 10,
