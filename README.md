@@ -1,4 +1,53 @@
-# Crónicas de la Marca Lib
+# Chronicles of the East Mark Lib (English)
+
+Chronicles of the East Mark Lib is a role-playing character generation library for the tabletop game Chronicles of the East Mark. This library provides easy-to-use methods for generating characters with features, abilities, and other attributes.
+
+You can find this magnificent game in PDF format on the [East Mark Codex](https://codexdelamarca.com/posts/cronicas-marca/) website or in physical format on the [Treasures of the Mark](https://tesorosdelamarca.com/producto/cronicas-de-la-marca-del-este/) website.
+
+## Installation
+
+You can install the library via npm:
+
+```
+npm install cronicas-de-la-marca-lib
+```
+
+Or via yarn:
+
+```
+yarn add cronicas-de-la-marca-lib
+```
+
+## Usage
+
+You can use this library both on the server-side with Node.js and in the browser. Here is an example of how you can use the library to generate a character:
+
+```javascript
+import { generateCharacter } from 'cronicas-de-la-marca-lib';
+
+const character = generateCharacter('Juan', 'human', 'paladin', 1);
+console.log(character);
+```
+
+## Methods
+
+### `generateCharacter(name, ancestry, class, level)`
+
+Generates a new character with the specified name, ancestry, class, and level. Returns an object representing the generated character.
+
+## To Do
+- [ ] Generate equipment  
+- [ ] More intelligent attribute assignment  
+- [ ] Spell assignment for classes that need it  
+
+## Contributing
+
+Contributions to this project are welcome. If you find an issue, please create an issue on GitHub. If you want to contribute code, please create a pull request.
+
+
+
+
+# Crónicas de la Marca del Este Lib (Español)
 
 Crónicas de la Marca Lib es una biblioteca de generación de personajes de rol para el juego de mesa Crónicas de la Marca. Esta biblioteca proporciona métodos fáciles de usar para generar personajes con características, habilidades y demás atributos.
 
@@ -36,15 +85,15 @@ console.log(character);
 Genera un nuevo personaje con el nombre, ancestro, clase y nivel especificados. Devuelve un objeto que representa al personaje generado.
 
 ## Cosas por hacer
-[ ] Generar equipo
-[ ] Asignación de características más inteligente.
-[ ] Asignación de conjuros para las clases que los necesiten.
+- [ ] Generar equipo  
+- [ ] Asignación de características más inteligente.  
+- [ ] Asignación de conjuros para las clases que los necesiten.  
 
 ## Contribuir
 
 Las contribuciones a este proyecto son bienvenidas. Si encuentras un problema, por favor, crea un problema en GitHub. Si quieres contribuir con código, por favor, crea una pull request.
 
-## Licenciad
+## License / Licencia
 
 OGL 1.0a
 
