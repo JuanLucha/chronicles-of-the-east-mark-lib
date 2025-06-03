@@ -9,15 +9,13 @@
   ],
   "scripts": {
     "test": "vitest",
-    "watch": "vitest --watch",
+    "test:watch": "vitest --watch",
     "build": "vite build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.21.3",
-    "@babel/preset-env": "^7.20.2",
     "vite": "^6.3.5",
     "vitest": "^3.2.1"
   }
