@@ -1,9 +1,17 @@
+import { describe, it, expect, vi, beforeEach } from "vitest";
 import rollDice from "./roll-dice";
 import hpGenerator from "./hp-generator";
 
-jest.mock("./roll-dice");
+// Mock de rollDice
+vi.mock("./roll-dice", () => ({
+  default: vi.fn()
+}));
 
 describe("hpGenerator", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
   it("should calculate hit points correctly", () => {
     // Define the parameters for the hit points generator
     const cases = [
@@ -51,7 +59,7 @@ describe("hpGenerator", () => {
         );
 
         // Check that the result matches the expected result
-        expect(result).toEqual(expectedResult);
+        expect(result).to.equal(expectedResult);
       }
     );
   });
@@ -75,6 +83,6 @@ describe("hpGenerator", () => {
     );
 
     // Check that the result is not less than 1
-    expect(result).toEqual(1);
+    expect(result).to.equal(1);
   });
 });

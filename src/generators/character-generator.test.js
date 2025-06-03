@@ -1,3 +1,4 @@
+import { describe, it, expect, beforeEach, vi } from "vitest";
 import { generateCharacter } from "./character-generator";
 import { generateStats, getModifier } from "./stats-generator";
 import { ancestries } from "../data/ancestries";
@@ -5,23 +6,25 @@ import { classes } from "../data/classes";
 import { sizes } from "../data/sizes";
 import { weapons } from "../data/weapons";
 
-jest.mock("./stats-generator", () => {
-  const originalModule = jest.requireActual("./stats-generator");
-
+// Mock de generateStats
+vi.mock("./stats-generator", async () => {
+  const actual = await vi.importActual("./stats-generator");
   return {
-    ...originalModule,
-    generateStats: jest.fn()
+    ...actual,
+    generateStats: vi.fn()
   };
 });
 
 describe("generateCharacter", () => {
   const characterName = "Ravencrow";
 
-  beforeEach(() => {});
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
 
   it("should add the ancestry modifiers correctly to the stats", () => {
     const level = 1;
-    const characterClass = "Fighter";
+    const characterClass = "fighter";
     const cases = [
       {
         ancestry: "human",
@@ -65,14 +68,13 @@ describe("generateCharacter", () => {
         characterClass,
         level
       );
-
       expect(character.stats).toEqual(stats);
     });
   });
 
   it("should generate a character object with the right properties", () => {
     const level = 1;
-    const characterClass = "Fighter";
+    const characterClass = "fighter";
     const ancestry = "human";
     const character = generateCharacter(
       characterName,
@@ -81,19 +83,19 @@ describe("generateCharacter", () => {
       level
     );
 
-    expect(character).toHaveProperty("name", characterName);
-    expect(character).toHaveProperty("ancestry", ancestry);
-    expect(character).toHaveProperty("class", characterClass);
-    expect(character).toHaveProperty("level", level);
-    expect(character).toHaveProperty("attackBonus");
-    expect(character).toHaveProperty("armorClass");
-    expect(character).toHaveProperty("hitPoints");
-    expect(character).toHaveProperty("weapons");
-    expect(character).toHaveProperty("armor");
-    expect(character).toHaveProperty("ancestryTraits");
-    expect(character).toHaveProperty("classTraits");
-    expect(character).toHaveProperty("stats");
-    expect(character).toHaveProperty("extra");
+    expect(character).to.have.property("name", characterName);
+    expect(character).to.have.property("ancestry", ancestry);
+    expect(character).to.have.property("class", characterClass);
+    expect(character).to.have.property("level", level);
+    expect(character).to.have.property("attackBonus");
+    expect(character).to.have.property("armorClass");
+    expect(character).to.have.property("hitPoints");
+    expect(character).to.have.property("weapons");
+    expect(character).to.have.property("armor");
+    expect(character).to.have.property("ancestryTraits");
+    expect(character).to.have.property("classTraits");
+    expect(character).to.have.property("stats");
+    expect(character).to.have.property("extra");
   });
 
   it("should add the correct ancestry traits", () => {
@@ -198,7 +200,7 @@ describe("generateCharacter", () => {
     ];
 
     cases.forEach(({ ancestry, traits }) => {
-      const characterClass = "Fighter";
+      const characterClass = "fighter";
       const level = 1;
       const character = generateCharacter(
         characterName,
@@ -213,7 +215,7 @@ describe("generateCharacter", () => {
   it("should add the correct class stat benefits", () => {
     const cases = [
       {
-        class: "Fighter",
+        class: "fighter",
         ancestry: "human",
         level: 5,
         traits: {
