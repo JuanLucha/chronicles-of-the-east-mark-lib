@@ -29,6 +29,10 @@ const character = generateCharacter('Juan', 'human', 'paladin', 1);
 console.log(character);
 ```
 
+## Testing
+
+To test that the module can be loaded from an html file, 
+
 ## Methods
 
 ### `generateCharacter(name, ancestry, class, level)`
